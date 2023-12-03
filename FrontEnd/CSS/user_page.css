@@ -1,0 +1,38 @@
+.header {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 20px;
+}
+
+.title {
+    color: red;
+}
+
+.body {
+    width: 100%;
+    height:400px;
+    background-color: lightgray;
+    display: flex;
+}
+
+.image {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+@media screen and (max-width: 400px) {
+.title {
+    margin-left: 15px;
+}
+
+.user {
+    margin-right: 15px;
+}
+}
