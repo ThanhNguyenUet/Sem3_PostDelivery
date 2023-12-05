@@ -1,21 +1,28 @@
-.header {
+.navbar {
     font-size: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid;
     padding: 20px;
 }
 
 .title {
+    margin-left: 20%;
     color: red;
 }
 
+.user {
+    margin-right: 20%;
+}
+
 .body {
-    width: 100%;
-    height:400px;
-    background-color: lightgray;
     display: flex;
+    margin: 0 auto;
+    align-items: center;
+    width: 100%;
+    height:500px;
+    background-color: lightgray;
 }
 
 .image {
@@ -23,8 +30,32 @@
     margin: 0 auto;
 }
 
+.welcome {
+    color: red;
+    font-size: 5em;
+    scale: auto;
+}
+
+.track {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height:500px;
+}
+
+.track_title {
+    
+}
 
 
+input {
+    border: 1px solid;
+    padding: 20px;
+    width: 600px;
+    height: 20px;
+  }
 
 
 @media screen and (max-width: 400px) {
