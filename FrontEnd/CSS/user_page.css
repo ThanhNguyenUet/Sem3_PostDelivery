@@ -89,10 +89,21 @@ button:hover {
 }
 
 .body {
+    width: 370px;
     height: 450px;
 }
 
 input {
-    width: 350px;
+    width: 290px;
 }
+
+.track {
+    width: 370px;
+    height:100px;
+}
+
+.welcome {
+    font-size: 3em;
+}
+
 }
