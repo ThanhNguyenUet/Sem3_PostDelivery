@@ -396,6 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
 .vscode/settings.json
 .vscode/c_cpp_properties.json
 .vscode/launch.json
