@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-function redirect() {
+function redirectToLoginPage() {
     window.location.href = "login.html"
+}
+
+function redirectToHelpPage() {
+    window.location.href = "help_and_support.html"
 }
