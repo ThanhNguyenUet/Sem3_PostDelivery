@@ -1,0 +1,42 @@
+.navbar {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+
+.home {
+    margin-left: 20%;
+    color: red;
+}
+
+.user {
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+.title {
+    margin-left: 25%;
+}
+
+.left_column {
+    margin-left: 26%;
+}
+
+.header {
+    display: flex;
+    font-size:20px;
+    margin-bottom: 40px;
+}
+
+.body {
+    display: flex;
+}
+
+.info {
+    display: flex;
+    font-size:20px;
+    margin-bottom: 40px;
+}
