@@ -1,0 +1,116 @@
+.navbar {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+
+.home {
+    margin-left: 20%;
+    color: red;
+}
+
+.user {
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+.title {
+    color: red;
+    margin-top: 3%;
+    margin-left: 25%;
+}
+
+.first_column {
+    font-weight: bold;
+    margin-left: 26%;
+}
+
+.second_column {
+    margin-left: 40px;
+}
+
+.third_column {
+    margin-left: 80px;
+    font-size: 20px;
+}
+
+.header, .info {
+    display: flex;
+    font-size:20px;
+    margin-bottom: 40px;
+}
+
+.body {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.transaction_point_title {
+    font-weight: bold;
+}
+
+select {
+    width: 300px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.1);
+}
+
+option {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 400px) {
+.navbar {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.home {
+    margin-left: 0px;
+}
+
+.user {
+    margin-right: 0px;
+}
+
+.title {
+    margin-left: 1%;
+}
+
+.first_column {
+    margin-left: 2%;
+}
+
+.header, .info {
+    margin-bottom: 10px;
+}
+
+.second_column {
+    margin-left: 50px;
+}
+
+.third_column {
+    margin-left: 1%;
+    font-size: 20px;
+}
+
+}
