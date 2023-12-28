@@ -19,6 +19,14 @@
     text-align: right;
 }
 
+#usernamePlaceholder:hover {
+    font-weight: bold;
+}
+
+#logout:hover {
+    font-weight: bold;
+}
+
 .body {
     display: flex;
     margin: 0 auto;
