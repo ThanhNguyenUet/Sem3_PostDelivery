@@ -13,7 +13,8 @@
             Post Delivery
         </div>
         <div class="user" id="login">
-            <i class="fa fa-user"> Login</i> 
+            <i class="fa fa-user"></i> <span id="usernamePlaceholder">Login</span> 
+            <span id="logout" style="cursor: pointer; display: none;" onclick="logout()"> Logout</span>
         </div>
     </div>
     <div class="body">
@@ -28,10 +29,68 @@
             <p> Track an item</p>
         </div>
         <div class="track_box">
-            <input type="text" placeholder="Your package ID" name="id" required>
-            <button type="submit"> Track</button>
+            <input type="text" placeholder="Your package ID" name="id" id="shipmentId" required>
+            <button type="button" onclick="trackShipment()"> Track</button>
         </div>
     </div>
     <script src="../../JS/user_page.js"></script>
+    <script>
+        // Function to fetch user data after the page loads
+       async function fetchUserData() {
+           const userID = localStorage.getItem('userID');
+
+           try {
+               if (userID) {
+                   // If userID is present, fetch user data and render the username
+                   const response = await fetch(`http://localhost:8080/user/get/${userID}`);
+                   if (response.ok) {
+                       const userData = await response.json();
+                       // Update the HTML with the username
+                       document.getElementById('usernamePlaceholder').innerText = userData.fullName;
+                       // Show the logout option
+                       document.getElementById('logout').style.display = 'inline';
+                   } else {
+                       console.error('Failed to fetch user data:', response.statusText);
+                   }
+               } else {
+                   // If userID is not present, render the login
+                   document.getElementById('login').innerHTML = '<i class="fa fa-user"><span id="usernamePlaceholder">  Login</span></i>';
+               }
+           } catch (error) {
+               console.error('Error during fetchUserData:', error);
+           }
+       }
+
+       // Function to handle logout
+       function logout() {
+           // Remove userID from localStorage
+           localStorage.removeItem('userID');
+           // Redirect to the login page (you can replace 'login.html' with your actual login page)
+           window.location.href = 'login.html';
+       }
+
+       async function trackShipment() {
+        const shipmentId = document.getElementById('shipmentId').value;
+        const userID = localStorage.getItem('userID');
+        const loginParam = userID ? true : false;
+
+        try {
+            const response = await fetch(`http://localhost:8080/user/shipments/find/${shipmentId}?login=${loginParam}`);
+            
+            if (response.ok) {
+                const shipmentData = await response.json();
+                console.log('Shipment Data:', shipmentData);
+                // Handle the rendering of the shipment data as needed
+            } else {
+                console.error('Failed to fetch shipment data:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error during trackShipment:', error);
+        }
+    }
+
+       // Call the function when the page loads
+       window.onload = fetchUserData;
+   </script>
 </body>
 </html>
