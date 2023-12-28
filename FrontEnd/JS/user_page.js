@@ -1,10 +1,15 @@
-var login = document.getElementById("login");
-login.addEventListener("click", function()  {
+var logout = document.getElementById("logout");
+logout.addEventListener("click", function () {
     window.location.href = "login.html";
 });
 
- // Function to fetch user data after the page loads
- async function fetchUserData() {
+var homePage = document.getElementById("title");
+homePage.addEventListener("click", function () {
+    window.location.href = "user_page.html";
+});
+
+// Function to fetch user data after the page loads
+async function fetchUserData() {
     const userID = localStorage.getItem('userID');
 
     try {
@@ -40,24 +45,24 @@ function logout() {
 
 // Function to handle usernamePlaceholder click
 function handleUsernameClick() {
- const userID = localStorage.getItem('userID');
+    const userID = localStorage.getItem('userID');
 
- if (userID) {
-     // Redirect to user_detail page
-     window.location.replace('user_detail.html');
- } else {
-     // Redirect to login page
-     window.location.href = 'login.html';
- }
+    if (userID) {
+        // Redirect to user_detail page
+        window.location.replace('user_detail.html');
+    } else {
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
 }
 
 // Call the function when the page loads
 window.onload = function () {
- fetchUserData();
+    fetchUserData();
 
- // Add click event to the usernamePlaceholder
- const usernamePlaceholder = document.getElementById('usernamePlaceholder');
- usernamePlaceholder.addEventListener('click', handleUsernameClick);
+    // Add click event to the usernamePlaceholder
+    const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+    usernamePlaceholder.addEventListener('click', handleUsernameClick);
 };
 
 document.addEventListener('DOMContentLoaded', function () {
