@@ -30,10 +30,9 @@
         </div>
         <div class="track_box">
             <input type="text" placeholder="Your package ID" name="id" id="shipmentId" required>
-            <button type="button" onclick="trackShipment()"> Track</button>
+            <a href = "item_track_page.html"><button type="button"> Track</button></a>
         </div>
     </div>
-    <script src="../../JS/user_page.js"></script>
     <script>
         // Function to fetch user data after the page loads
        async function fetchUserData() {
@@ -69,28 +68,28 @@
            window.location.href = 'login.html';
        }
 
-       async function trackShipment() {
-        const shipmentId = document.getElementById('shipmentId').value;
-        const userID = localStorage.getItem('userID');
-        const loginParam = userID ? true : false;
 
-        try {
-            const response = await fetch(`http://localhost:8080/user/shipments/find/${shipmentId}?login=${loginParam}`);
-            
-            if (response.ok) {
-                const shipmentData = await response.json();
-                console.log('Shipment Data:', shipmentData);
-                // Handle the rendering of the shipment data as needed
-            } else {
-                console.error('Failed to fetch shipment data:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error during trackShipment:', error);
+       // Function to handle usernamePlaceholder click
+    function handleUsernameClick() {
+        const userID = localStorage.getItem('userID');
+
+        if (userID) {
+            // Redirect to user_detail page
+            window.location.replace('user_detail.html');
+        } else {
+            // Redirect to login page
+            window.location.href = 'login.html';
         }
     }
 
-       // Call the function when the page loads
-       window.onload = fetchUserData;
+    // Call the function when the page loads
+    window.onload = function () {
+        fetchUserData();
+
+        // Add click event to the usernamePlaceholder
+        const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+        usernamePlaceholder.addEventListener('click', handleUsernameClick);
+    };
    </script>
 </body>
 </html>

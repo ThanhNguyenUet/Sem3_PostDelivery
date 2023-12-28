@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/help_and_support.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Post Delivery</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="home">
+            Post Delivery
+        </div>
+        <div class="user" id="username">
+            <i class="fa fa-user"> </i><span id="usernamePlaceholder">Username</span>
+        </div>
+    </div>
+    <div class="body">
+        <div class="sub_title">
+            <h2>Post Delivery - Help and Support</h2>
+        </div>
+        <div class="sub_body">
+            <div class="status">
+                <img width="30" height="30" src="https://img.icons8.com/ios/50/connection-status-off.png" alt="connection-status-off"><p>Pending</p>
+            </div>
+            <div class="message">
+                Parcel is in a state of waiting or has not yet progressed to the next stage in its delivery process
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Function to fetch user data after the page loads
+    async function fetchUserData() {
+           const userID = localStorage.getItem('userID');
+
+           try {
+               if (userID) {
+                   // If userID is present, fetch user data
+                   const response = await fetch(`http://localhost:8080/user/get/${userID}`);
+                   if (response.ok) {
+                       const userData = await response.json();
+                       // Update the HTML with the user data
+                       document.getElementById('usernamePlaceholder').innerText = userData.fullName;
+                   } else {
+                       console.error('Failed to fetch user data:', response.statusText);
+                   }
+               } else {
+                   // If userID is not present, redirect to the login page
+                   window.location.href = 'login.html';
+               }
+           } catch (error) {
+               console.error('Error during fetchUserData:', error);
+           }
+       }
+
+       // Call the function when the page loads
+       function handleUsernameClick() {
+        const userID = localStorage.getItem('userID');
+
+        if (userID) {
+            // Redirect to user_detail page
+            window.location.replace('user_detail.html');
+        } else {
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+    }
+
+       // Call the function when the page loads
+       window.onload = function () {
+        fetchUserData();
+
+        // Add click event to the usernamePlaceholder
+        const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+        usernamePlaceholder.addEventListener('click', handleUsernameClick);
+       }
+</script>
+</html>
