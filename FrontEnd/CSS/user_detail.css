@@ -8,6 +8,7 @@
 }
 
 .home {
+    font-size: 25px;
     margin-left: 20%;
     color: red;
 }
@@ -105,7 +106,7 @@ option {
 }
 
 .second_column {
-    margin-left: 50px;
+    margin-left: 10px;
 }
 
 .third_column {

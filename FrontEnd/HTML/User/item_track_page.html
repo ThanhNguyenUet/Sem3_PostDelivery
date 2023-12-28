@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="title">
-            Post Delivery
+        <div class="home">
+            <span id="homePage" onclick="redirectToHomePage()">Post Delivery</span>
         </div>
         <div class="user" id="username">
-            <i class="fa fa-user"> Username</i> 
+            <i class="fa fa-user"> </i> <span id="usernamePlaceholder" onclick="redirectToProfilePage()">Username</span>
         </div>
     </div>
     <div class="body">
@@ -22,28 +22,30 @@
             <div class="tracking_info_title">
                 <h2>Tracking number</h2>
             </div>
-            <div class="tracking_info_number">
-                <p>EE 123456789 AU</p>
+            <div class="tracking_info_number" id="trackingNumber">
+                <!-- Tracking number will be dynamically updated -->
             </div>
             <div class="tracking_status_title">
                 <h2>Tracking</h2>
             </div>
-            <div class="tracking_status">
-                <img width="30" height="30" src="https://img.icons8.com/ios/50/connection-status-off.png" alt="connection-status-off"><p>Pending</p>
+            <div class="tracking_status" id="trackingStatus">
+                <!-- Tracking status will be dynamically updated -->
             </div>
             <div class="details">
                 <h2>Details</h2>
                 <div class="address_title">
                     <h4>Delivery Address</h4>
                 </div>
-                <div class="address">
-                    Trung Liet, Dong Da, Ha Noi
+                <div class="address" id="deliveryAddress">
+                    <!-- Delivery address will be dynamically updated -->
                 </div>
                 <div class="size_weight_title">
-                    <h4>Size & Weight</h4>
+                    <h4>Goods</h4>
                 </div>
-                <div class="size_weight">
-                    Can't be shown
+                <div class="size_weight" id="sizeAndWeight">
+                    <div class="goods" id="goodsList">
+                        <!-- Goods list will be dynamically updated -->
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -53,12 +55,13 @@
                     <h2>Track an item</h2>
                 </div>
                 <div class="track_box">
-                    <input type="text" placeholder="Your package ID" name="id" required>
-                    <button type="submit"> Track</button>
+                    <input type="text" placeholder="Your package ID" name="id" id="shipmentIdInput" required>
+                    <button type="submit" onclick="trackShipment()"> Track</button>
                 </div>
             </div>
             <div class="help">
                 <h2>Help and Support</h2>
+                <a href = "help_and_support.html" style="text-decoration: none;">
                 <div class="help_box">
                     <button class="goto" onclick="redirectToHelpPage()">
                         <div>
@@ -68,6 +71,7 @@
                         <i class="material-icons">navigate_next</i>
                     </button>
                 </div>
+                </a>
             </div>
         </div>
     </div>

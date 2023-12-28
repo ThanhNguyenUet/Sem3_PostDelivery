@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="register">
-    <form action="">
+    <form id="registrationForm">
       <div class="header">
         <h2>Register<br></h2>
         <p>Enter your details to register an account</p><br>
@@ -16,7 +16,7 @@
       <div class="form-element">
         <div class="name">
           <label for="fullname"></label>
-          <input type="text" placeholder="Full Name" name="fullname" required>
+          <input type="text" placeholder="Full Name" name="fullName" required>
         </div>
       </div>
       <div class="form-element">
@@ -28,7 +28,7 @@
       <div class="form-element">
         <div class="phoneNum">
           <label for="phoneNum"></label>
-          <input type="tel" placeholder="Phone Number" name="phoneNum" required>
+          <input type="tel" placeholder="Phone Number" name="phoneNumber" required>
         </div>
       </div>
       <div class="form-element">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="sign-up">
-        <button type="submit">Sign up</button>
+        <button type="button" onclick="performRegister()">Sign up</button>
       </div>
       <div class="had-account">
         <p>Already had an account? <a href="login.html">Login</a></p>
@@ -52,4 +52,5 @@
     </form>
   </div>
 </body>
+<script src="../../JS/register.js"></script>
 </html>
