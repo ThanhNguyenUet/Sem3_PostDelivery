@@ -18,10 +18,15 @@
         </div>
     </div>
     <div class="body">
-        <div class="image">
-            <div class="welcome">
-                <p>Welcome to Post Delivery</p>
-            </div>
+        <div class="slider">
+            <img id="banner1" src="../../src/banner1.jpg" alt="Image 1"/>
+            <img id="banner2" src="../../src/banner2.png" alt="Image 2"/>
+            <img id="banner3" src="../../src/banner3.png" alt="Image 3"/>
+        </div>
+        <div class="navigation_button">
+            <span class="dot active" onclick="changeSlide(0)"></span>
+            <span class="dot" onclick="changeSlide(1)"></span>
+            <span class="dot" onclick="changeSlide(2)"></span>
         </div>
     </div>
     <div class="track">
@@ -29,7 +34,7 @@
             <p> Track an item</p>
         </div>
         <div class="track_box">
-            <input type="text" placeholder="Your package ID" name="id" id="shipmentId" required>
+            <input placeholder="Your package ID"disabled>
             <a href = "item_track_page.html"><button type="button"> Track</button></a>
         </div>
     </div>

@@ -1,5 +1,6 @@
 var logout = document.getElementById("logout");
 logout.addEventListener("click", function () {
+    window.localStorage.clear();
     window.location.href = "login.html";
 });
 
@@ -26,6 +27,7 @@ async function fetchUserData() {
                 console.error('Failed to fetch user data:', response.statusText);
             }
         } else {
+            document.getElementById('logout').remove();
             // If userID is not present, render the login
             document.getElementById('login').innerHTML = '<i class="fa fa-user"><span id="usernamePlaceholder">  Login</span></i>';
         }
@@ -74,3 +76,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 300);
     });
 });
+
+//Slider
+var imgs = document.querySelectorAll('.slider img');
+var dots = document.querySelectorAll('.dot');
+var currentImg = 0; // index of the first image 
+const interval = 3000; // duration(speed) of the slide
+
+function changeSlide(n) {
+    for (var i = 0; i < imgs.length; i++) { // reset
+        imgs[i].style.opacity = 0;
+        dots[i].className = dots[i].className.replace(' active', '');
+    }
+
+    currentImg = (currentImg + 1) % imgs.length; // update the index number
+
+    if (n != undefined) {
+        clearInterval(timer);
+        timer = setInterval(changeSlide, interval);
+        currentImg = n;
+    }
+
+    imgs[currentImg].style.opacity = 1;
+    dots[currentImg].className += ' active';
+}
+
+var timer = setInterval(changeSlide, interval);
+
+
