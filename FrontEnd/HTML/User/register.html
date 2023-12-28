@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="register">
-    <form action="">
+    <form id="registrationForm">
       <div class="header">
         <h2>Register<br></h2>
         <p>Enter your details to register an account</p><br>
@@ -16,7 +16,7 @@
       <div class="form-element">
         <div class="name">
           <label for="fullname"></label>
-          <input type="text" placeholder="Full Name" name="fullname" required>
+          <input type="text" placeholder="Full Name" name="fullName" required>
         </div>
       </div>
       <div class="form-element">
@@ -28,7 +28,7 @@
       <div class="form-element">
         <div class="phoneNum">
           <label for="phoneNum"></label>
-          <input type="tel" placeholder="Phone Number" name="phoneNum" required>
+          <input type="tel" placeholder="Phone Number" name="phoneNumber" required>
         </div>
       </div>
       <div class="form-element">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="sign-up">
-        <button type="submit">Sign up</button>
+        <button type="button" onclick="performRegister()">Sign up</button>
       </div>
       <div class="had-account">
         <p>Already had an account? <a href="login.html">Login</a></p>
@@ -52,4 +52,49 @@
     </form>
   </div>
 </body>
+<script>
+  async function performRegister()  {
+    const email = document.getElementsByName("email")[0].value;
+    const password = document.getElementsByName("password")[0].value;
+    const phoneNumber = document.getElementsByName("phoneNumber")[0].value;
+    const address = document.getElementsByName("address")[0].value;
+    const fullName = document.getElementsByName("fullName")[0].value;
+
+
+    const user = {
+      fullName : fullName,
+
+      email : email,
+
+      phoneNumber : phoneNumber,
+
+      password :  password,
+
+      address : address
+
+    };
+
+    try {
+        const response = await fetch('http://localhost:8080/user/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        });
+
+        if (response.ok) {
+          alert('Registration successful!');
+            window.location.href = "login.html"; 
+        } else {
+          const errorData = await response.json();
+            console.error('Registration failed:', errorData);
+            alert('Registration failed. Please try again.');
+        }
+    } catch (error) {
+          console.error('Error during registration:', error);
+          alert('Registration failed. Please try again.');
+    }
+  }
+</script>
 </html>
