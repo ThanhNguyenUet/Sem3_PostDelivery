@@ -139,6 +139,11 @@ button.goto {
 }
 
 @media screen and (max-width: 400px) {
+.navbar {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .home {
     margin-left: 0px;
 }

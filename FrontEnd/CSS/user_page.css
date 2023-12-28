@@ -97,6 +97,11 @@ button:hover {
 }
 
 @media screen and (max-width: 400px) {
+.navbar {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .title {
     margin-left: 0px;
     text-align: left;
@@ -124,6 +129,14 @@ input {
 
 .welcome {
     font-size: 3em;
+    text-align: center;
 }
 
+#usernamePlaceholder:hover {
+    font-weight: normal;
+}
+
+#logout:hover {
+    font-weight: normal;
+}
 }

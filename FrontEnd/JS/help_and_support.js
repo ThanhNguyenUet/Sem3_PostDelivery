@@ -1,5 +1,9 @@
+function redirectToHomePage() {
+    window.location.href="user_page.html";
+}
+
 function redirectToProfilePage() {
-    window.location.href ="user_detail.html";
+    window.location.href="user_detail.html";
 }
 
 // Function to fetch user data after the page loads
@@ -14,10 +18,6 @@ async function fetchUserData() {
                 const userData = await response.json();
                 // Update the HTML with the user data
                 document.getElementById('usernamePlaceholder').innerText = userData.fullName;
-                document.getElementById('userFullname').innerText = userData.fullName;
-                document.getElementById('userAddress').innerText = userData.address;
-                document.getElementById('userPhoneNumber').innerText = userData.phoneNumber;
-                document.getElementById('userEmail').innerText = userData.email;
             } else {
                 console.error('Failed to fetch user data:', response.statusText);
             }
@@ -31,4 +31,23 @@ async function fetchUserData() {
 }
 
 // Call the function when the page loads
-window.onload = fetchUserData;
+function handleUsernameClick() {
+    const userID = localStorage.getItem('userID');
+
+    if (userID) {
+        // Redirect to user_detail page
+        window.location.replace('user_detail.html');
+    } else {
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
+}
+
+// Call the function when the page loads
+window.onload = function () {
+    fetchUserData();
+
+    // Add click event to the usernamePlaceholder
+    const usernamePlaceholder = document.getElementById('usernamePlaceholder');
+    usernamePlaceholder.addEventListener('click', handleUsernameClick);
+}
