@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Post Delivery</title>
 </head>
+
 <body>
     <div class="navbar">
         <div class="home">
@@ -21,14 +23,36 @@
             <h2>Help and Support</h2>
         </div>
         <div class="sub_body">
-            <div class="status">
-                <img width="30" height="30" src="https://img.icons8.com/ios/50/connection-status-off.png" alt="connection-status-off"><p>Pending</p>
+            <div class="first_column">
+                <div class="pending status">
+                    <img width="30" height="30" src="https://img.icons8.com/ios/50/connection-status-off.png"
+                        alt="connection-status-off">
+                    <p>Pending</p>
+                </div>
+                <div class="in_transit status">
+                    <img width="30" height="30" src="https://img.icons8.com/pastel-glyph/64/1A1A1A/express-delivery--v2.png"
+                        alt="express-delivery--v2" />
+                    <p>In Transit</p>
+                </div>
+                <div class="delivered status">
+                    <img width="30" height="30" src="https://img.icons8.com/ios/50/checked-truck.png" alt="checked-truck" />
+                    <p>Delivered</p>
+                </div>
+                <div class="failed_delivery status">
+                    <img width="30" height="30" src="https://img.icons8.com/ios/50/1A1A1A/cancel.png" alt="cancel" />
+                    <p>Failed Delivery</p>
+                </div>
             </div>
-            <div class="message">
-                Parcel is in a state of waiting or has not yet progressed to the next stage in it's delivery process
+            <div class="second_column">
+                <div class="pending explanation">Parcel is in a state of waiting or has not yet progressed to the next stage in
+                    it's delivery process</div>
+                <div class="in_transit explanation">Parcel is being delivered</div>
+                <div class="delivered explanation">Parcel has finished delivering and has been received</div>
+                <div class="failed explanation">Parcel has failed to be delivered or has been lost in the process</div>
             </div>
         </div>
     </div>
 </body>
 <script src="../../JS/help_and_support.js"></script>
+
 </html>
