@@ -57,9 +57,23 @@ async function performLogin() {
         });
 
         if (response.ok) {
-            const userID = await response.json();
-            localStorage.setItem('userID', userID);
-            window.location.href = "user_page.html"; 
+            const returnObject = await response.json();
+            if (returnObject.roles === "User") {
+                localStorage.setItem('userID', returnObject.userID);
+                window.location.href = "user_page.html"; 
+            }
+            if (returnObject.roles === "Company_owner") {
+                localStorage.setItem('ownerID', returnObject.company_ownerID);
+                window.location.href = "../Company_Owner/owner.html"; 
+            }
+            if (returnObject.roles === "Leader") {
+                localStorage.setItem('leaderID', returnObject.leaderID);
+                window.location.href = "../Leader/leader.html";
+            }
+            if (returnObject.roles === "Staff") {
+                localStorage.setItem('staffID', returnObject.staffID);
+                window.location.href = "../Staff/staff.html"; 
+            }
         } else {
             // Handle the case where login failed
             console.error('Login failed:', response.statusText);

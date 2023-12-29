@@ -55,9 +55,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="leader.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
-                    <a href="leader-staff.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
-                    <a href="leader-parcel.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Parcels</a>
+                    <a href="staff.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
                 </div>
             </nav>
         </div>
@@ -66,6 +64,7 @@
 
         <!-- Content Start -->
         <div class="content">
+
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
@@ -87,46 +86,33 @@
             </nav>
             <!-- Navbar End -->
 
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Staff Accounts</p>
-                                <h6 class="mb-0" id = "lead1">25</h6>
-                            </div>
+            <br> <br>
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4">Shipping Order</h6>
+                    <form id="create_shipping_order">
+                        <div class="mb-3">
+                            <label for="staffSelection" class="form-label">Select Staff</label>
+                            <select class="form-select" id="staffSelection" required>
+                                <!-- Populate this dropdown dynamically with staff members -->
+                                <!-- Example: <option value="staff1">Staff 1</option> -->
+                            </select>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Parcels</p>
-                                <h6 class="mb-0" id = "lead2">25</h6>
-                            </div>
+                    
+                        <div class="mb-3">
+                            <label for="shipmentID" class="form-label">Shipment ID</label>
+                            <input type="text" class="form-control" id="shipmentID">
                         </div>
-                    </div>
+                    
+                        <div class="mb-3">
+                            <label for="staffID" class="form-label">Staff sent ID</label>
+                            <input type="text" class="form-control" id="staffId">
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Create Shipping Order</button>
+                    </form>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-3">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Parcels Sent Chart At 
-                                <h5 id = "location" style="text-align: center;"></h5>
-                            </h6>
-                            <canvas id="line-chart-1"></canvas>
-                        </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
-            
         </div>
         <!-- Content End -->
 
@@ -148,7 +134,8 @@
 
     <!-- Template Javascript -->
     <script src = "../js/main.js"></script>
-    <script src = "../../JS/leader.js"></script>
+    <script src = "../../JS/staff.js"></script>
+    <script src = "../../JS/staff_create_order.js"></script>
 </body>
 
 </html>

@@ -49,15 +49,22 @@
                     <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
                     <div class="ms-3">
-                        <h6 class="mb-0 userDisplayName">Jhon Doe</h6>
-                        <span>Leader</span>
+                        <h6 class="mb-0">Jhon Doe</h6>
+                        <span>Admin</span>
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="leader.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
-                    <a href="leader-staff.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
-                    <a href="leader-parcel.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Parcels</a>
+                    <a href="owner.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
+                    <a href="owner-transaction.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Transaction Point</a>
+                    <a href="owner-settlement.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Settlement Point</a>
+                    
+                    <a href="owner-leader.html" class="nav-item nav-link" active><i class="fa fa-user me-2"></i>Leaders</a>
+                    <a href="owner-parcels.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Parcels</a>
                 </div>
             </nav>
         </div>
@@ -77,10 +84,10 @@
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <span class="d-none d-lg-inline-flex userDisplayName">John Doe</span>
+                            <span class="d-none d-lg-inline-flex">John Doe</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                            <a href="../User/login.html" class="dropdown-item" onclick = logOut()>Log Out</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -88,45 +95,28 @@
             <!-- Navbar End -->
 
 
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Staff Accounts</p>
-                                <h6 class="mb-0" id = "lead1">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Parcels</p>
-                                <h6 class="mb-0" id = "lead2">25</h6>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-sm-12 col-xl-11" style = "margin-top: 40px;">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4" style="text-align: center;color: red;font-size: 1.5em;">Leaders</h6>
+                    <table class="table table-hover" id="leaderTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Full Name</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
 
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-3">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Parcels Sent Chart At 
-                                <h5 id = "location" style="text-align: center;"></h5>
-                            </h6>
-                            <canvas id="line-chart-1"></canvas>
-                        </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
-            
+          
         </div>
         <!-- Content End -->
 
@@ -148,7 +138,7 @@
 
     <!-- Template Javascript -->
     <script src = "../js/main.js"></script>
-    <script src = "../../JS/leader.js"></script>
+    <script src = "../../JS/company_owner_leader.js"></script>
 </body>
 
 </html>

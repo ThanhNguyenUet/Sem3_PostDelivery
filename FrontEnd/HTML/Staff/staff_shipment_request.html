@@ -55,9 +55,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="leader.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
-                    <a href="leader-staff.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
-                    <a href="leader-parcel.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Parcels</a>
+                    <a href="staff.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
                 </div>
             </nav>
         </div>
@@ -87,45 +85,80 @@
             </nav>
             <!-- Navbar End -->
 
-
-            <!-- Sale & Revenue Start -->
+            <br> <br>
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Staff Accounts</p>
-                                <h6 class="mb-0" id = "lead1">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Parcels</p>
-                                <h6 class="mb-0" id = "lead2">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
 
 
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-3">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Parcels Sent Chart At 
-                                <h5 id = "location" style="text-align: center;"></h5>
-                            </h6>
-                            <canvas id="line-chart-1"></canvas>
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4">Goods List</h6>
+                    <form id = "create_shipment">
+                        <div class="mb-3">
+                            <label for="goodsListTextarea" class="form-label">Shipments</label>
+                            <textarea class="form-control" id="goodsListTextarea" name="goodsList" readonly></textarea>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="userSelect" class="form-label">Select User</label>
+                            <select class="form-select" id="userSelect" name="selectedUser">
+                                <option value="user1">User 1</option>
+                                <option value="user2">User 2</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="userReceivedAddress" class="form-label">User Received Address</label>
+                            <input type="text" class="form-control" id="userReceivedAddress" name="userReceivedAddress">
+                        </div>
+
+                        
+                    
+                        <button type="submit" class="btn btn-primary">Create Shipments</button>
+                    </form>
                 </div>
             </div>
-            <!-- Sales Chart End -->
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4">Add Good</h6>
+                    <form id = "add_good">
+                        <div class="mb-3">
+                            <label for="goodsName" class="form-label">Goods Name</label>
+                            <input type="text" class="form-control" id="goodsName">
+                        </div>
+            
+                        <div class="mb-3">
+                            <label class="form-label d-block">Goods Type</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="goodsType" id="document" value="Document">
+                                <label class="form-check-label" for="document">Document</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="goodsType" id="other" value="Other">
+                                <label class="form-check-label" for="other">Other</label>
+                            </div>
+                        </div>
+            
+                        <div class="mb-3">
+                            <label for="goodsSize" class="form-label">Goods Size</label>
+                            <input type="number" step="0.1" class="form-control" id="goodsSize" min="0">
+                        </div>
+            
+                        <div class="mb-3">
+                            <label for="goodsWeight" class="form-label">Goods Weight</label>
+                            <input type="number" step="0.1" class="form-control" id="goodsWeight" min="0">
+                        </div>
+            
+                        <button type="submit" class="btn btn-primary">Add Good</button>
+                    </form>
+                </div>
+            </div>
+            
+
+
+           </div>
+           </div>
             
         </div>
         <!-- Content End -->
@@ -148,7 +181,9 @@
 
     <!-- Template Javascript -->
     <script src = "../js/main.js"></script>
-    <script src = "../../JS/leader.js"></script>
+    <script src = "../../JS/staff.js"></script>
+    <script src = "../../JS/staff_shipment.js"></script>
+
 </body>
 
 </html>

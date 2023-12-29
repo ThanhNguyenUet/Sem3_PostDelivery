@@ -29,6 +29,7 @@
 
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
+    <link href = "../../CSS/receipt.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,9 +56,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="leader.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
-                    <a href="leader-staff.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
-                    <a href="leader-parcel.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Parcels</a>
+                    <a href="staff.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
                 </div>
             </nav>
         </div>
@@ -87,47 +86,125 @@
             </nav>
             <!-- Navbar End -->
 
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Staff Accounts</p>
-                                <h6 class="mb-0" id = "lead1">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Parcels</p>
-                                <h6 class="mb-0" id = "lead2">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sale & Revenue End -->
-
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-3">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Parcels Sent Chart At 
-                                <h5 id = "location" style="text-align: center;"></h5>
-                            </h6>
-                            <canvas id="line-chart-1"></canvas>
-                        </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
+            <br> <br>
+            <div class="col-sm-12 col-xl-11">
+                <div class="bg-light rounded h-100 p-4">
+    <div id = "header">
+        <h3 id = "header_title">Magic Post</h3>
+    </div>
             
+            <!-- Grid container -->
+    <div class="grid-container">
+        <div class="grid-item style-1">
+            <h6>1. Họ tên địa chỉ người gửi</h6>
+            <p id = "nameandaddressSent"></p>
         </div>
+        <div class="grid-item style-2">
+            <h6>2. Họ tên địa chỉ người nhận</h6>
+            <p id = "nameandaddressRec"></p>
+            <h6>Mã ĐH:</h6>
+            <h6>Điện thoại : </h6>
+            <h6>Mã Bưu Chính : 01089</h6>
+        </div>
+        <div class="grid-item style-34">
+            <h6>3. Loại hàng gửi</h6>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="goodsType" id="document" value="Document">
+            <label class="form-check-label" for="document">Document</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="goodsType" id="other" value="Other">
+            <label class="form-check-label" for="other">Other</label>
+            </div>
+            <br>
+            <h6>4. Nội dung giá trị bưu gửi</h6>
+            <table class="table table-hover" id="parcelTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Nội dung</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Trị giá</th>
+                        <th scope="col">Giấy tờ đính kèm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="grid-item style-9">
+            <h6>9. Cước</h6>
+            <div class="item">
+                <span>a. Cước chính :</span>
+                <span>9500</span>
+              </div>
+          
+              <div class="item">
+                <span>b. Phụ phí :</span>
+                <span>1900</span>
+              </div>
+          
+              <div class="item">
+                <span>c. Cước GTGT :</span>
+                <span>0</span>
+              </div>
+          
+              <div class="item">
+                <span>d. Tổng cước :</span>
+                <span>12.312</span>
+              </div>
+          
+              <div class="item">
+                <span>e. Thu khác :</span>
+                <span>0</span>
+              </div>
+          
+              <div class="item">
+                <span>f. Tổng thu :</span>
+                <span>12.312</span>
+              </div>
+        </div>
+        <div class="grid-item style-10">
+            <h6>10. Khối lượng (kg)</h6>
+            <div>Khối lượng thực tế : 30</div>
+            <div>Khối lượng quy đổi : 0</div>
+        </div>
+        <div class="grid-item style-5">
+            <h6>5. Dịch vụ đặc biệt / Cộng thêm:</h6>
+            <div class = "dotted-line"></div>
+            <div class = "dotted-line"></div>
+            <p>Mã hợp đồng : EMSC / PPA</p>
+        </div>
+        <div class="grid-item style-12">
+            <h6>Chú dẫn nghiệp vụ</h6>
+        </div>
+        <div class="grid-item style-6">
+            <h6>Chỉ dẫn người gửi khi không phát được bưu gửi</h6>
+        </div>
+        <div class="grid-item style-11">
+            <h6>11. Thu của người nhận</h6>
+            <div>COD : 0</div>
+            <div>Thu khác : 0</div>
+            <div>Tổng thu : 0</div>
+        </div>
+        <div class="grid-item style-12">
+            <h6>Chú dẫn nghiệp vụ</h6>
+        </div>
+        <div class="grid-item style-78">
+            <h6>7. Cam kết của người gửi</h6>
+            <p>Tôi chấp nhận các điều khoản tại mặt sau phiếu gửi</p>
+            <h6>8. Ngày giờ gửi</h6>
+            <h6>Chữ ký người gửi</h6>
+        </div>
+        <div class="grid-item style-13">
+            <h6>Bưu cục chấp nhận</h6>
+        </div>
+        <div class="grid-item style-14">
+            <h6>14. Ngày giờ nhận</h6>
+        </div>
+       
+    </div>
+    </div>
+    </div>
         <!-- Content End -->
 
 
@@ -148,7 +225,8 @@
 
     <!-- Template Javascript -->
     <script src = "../js/main.js"></script>
-    <script src = "../../JS/leader.js"></script>
+    <script src = "../../JS/staff.js"></script>
+    <script src = "../../JS/receipt.js"></script>
 </body>
 
 </html>

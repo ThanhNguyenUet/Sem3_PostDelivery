@@ -55,8 +55,8 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="leader.html" class="nav-item nav-link" active><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
-                    <a href="leader-staff.html" class="nav-item nav-link"><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
+                    <a href="leader.html" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a> 
+                    <a href="leader-staff.html" class="nav-item nav-link"active><i class="fa fa-laptop me-2"></i>Staff Accounts</a>
                     <a href="leader-parcel.html" class="nav-item nav-link"><i class="fa fa-map-marker me-2"></i>Parcels</a>
                 </div>
             </nav>
@@ -87,46 +87,55 @@
             </nav>
             <!-- Navbar End -->
 
-
-            <!-- Sale & Revenue Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-line fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Staff Accounts</p>
-                                <h6 class="mb-0" id = "lead1">25</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-6">
-                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                            <div class="ms-3">
-                                <p class="mb-2">Total Parcels</p>
-                                <h6 class="mb-0" id = "lead2">25</h6>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-sm-12 col-xl-11" style = "margin-top: 40px;">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4" style="text-align: center;color: red;font-size: 1.5em;">Parcels Sent</h6>
+                    <table class="table table-hover" id="parcelSentTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Location Sent</th>
+                                <th scope="col">Location Rec</th>
+                                <th scope="col">Time Sent</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Goods</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <!-- Sale & Revenue End -->
 
-
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-3">
-                        <div class="bg-light rounded h-100 p-4">
-                            <h6 class="mb-4">Parcels Sent Chart At 
-                                <h5 id = "location" style="text-align: center;"></h5>
-                            </h6>
-                            <canvas id="line-chart-1"></canvas>
-                        </div>
-                </div>
-            </div>
-            <!-- Sales Chart End -->
+            <br>
+            <br>
             
+
+            <div class="col-sm-12 col-xl-11" style = "margin-top: 40px;">
+                <div class="bg-light rounded h-100 p-4">
+                    <h6 class="mb-4" style="text-align: center;color: red;font-size: 1.5em;">Parcels Received</h6>
+                    <table class="table table-hover" id="parcelReceivedTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Location Sent</th>
+                                <th scope="col">Location Rec</th>
+                                <th scope="col">Time Sent</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Goods</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            
+
         </div>
         <!-- Content End -->
 
@@ -148,7 +157,7 @@
 
     <!-- Template Javascript -->
     <script src = "../js/main.js"></script>
-    <script src = "../../JS/leader.js"></script>
+    <script src = "../../JS/leader-parcel.js"></script>
 </body>
 
 </html>
