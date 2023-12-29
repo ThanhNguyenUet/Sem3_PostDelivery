@@ -69,7 +69,8 @@ input::placeholder {
 }
 
 input:focus {
-  background-color: lightgray;
+  background-color: none;
+  outline: none;
 }
 
 .forgot-password {
